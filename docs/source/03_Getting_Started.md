@@ -1,4 +1,4 @@
-This chapter provides a concise guide to configuring the DEEPX DX-M1 development environment. It covers the essential steps from verifying system requirements to executing your first AI inference benchmarks. It assumes the DX-M1 M.2 module has already been physically installed as described in **[System Overview](./02_System_Overview.md)**.  
+This chapter provides a concise guide to configuring the **DEEPX DX-M1** development environment. It covers the essential steps from verifying system requirements to executing your first AI inference benchmarks.  
 
 ## System Prerequisites
 
@@ -8,8 +8,8 @@ Before proceeding with the driver installation, ensure the host system is proper
 
 **Step 1. Install Raspberry Pi OS**  
 
-- If you have not already done so in **[System Overview](./02_System_Overview.md)**, download and install the OS using the **Raspberry Pi Imager**.  
-- Link: https://www.raspberrypi.com/software/  
+- Download and install the OS using the **Raspberry Pi Imager**.  
+- Link: [https://www.raspberrypi.com/software/](https://www.raspberrypi.com/software/)  
 
 **Step 2. Connect to the Internet**  
 
@@ -20,11 +20,11 @@ Before proceeding with the driver installation, ensure the host system is proper
  
 ## Software Setup and Demo Execution
 
-This section provides a brief guide to installing the necessary drivers and executing AI inference benchmarks using the DX-M1 accelerator.  
+This section provides a brief guide to installing the necessary drivers and executing AI inference benchmarks using the **DEEPX DX-M1** accelerator.  
 
 ### Install DEEPX M1 Driver and Runtime
 
-Follow these steps to configure the official repository and install the **DEEPX Runtime (`DXRT`)** library, known as libdxrt, along with the necessary driver modules.  
+Follow these steps to configure the official repository and install the **DEEPX Runtime (`DXRT`)** library, known as `libdxrt`, along with the necessary driver modules.  
 
 **Step 1. Download the debian package**  
 
@@ -32,29 +32,29 @@ Execute the following commands to download latest debian package.
 
 ```
 # Download debian package to Download folder
-$ wget -P ~/Downloads https://github.com/DEEPX-AI/dx_rt/raw/refs/heads/main/release/3.3.2/libdxrt_3.3.2_all.deb
+$ wget -P ~/Downloads https://github.com/DEEPX-AI/dx_rt/raw/refs/heads/main/release/3.4.2/libdxrt-bin_3.4.2_arm64.deb
 
-$ wget -P ~/Downloads https://github.com/DEEPX-AI/dx_rt_npu_linux_driver/raw/refs/heads/main/release/2.4.0/dxrt-driver-dkms_2.4.0-2_all.deb
+$ wget -P ~/Downloads https://github.com/DEEPX-AI/dx_rt_npu_linux_driver/raw/refs/heads/main/release/2.6.0/dxrt-driver-dkms_2.6.0-2_all.deb
 ```
 
 <div align="left">
   <img src="./resources/DownloadDebianPackage.png" width="700">
-  <p>Figure. Download Debian Package</p>
+  <p>Figure. Download Debian package</p>
 </div>
 
 
 **Step 2. Installation of DXRT and Driver**  
 
-Install the DEEPX Runtime (DXRT) library and the NPU driver.  
+Install the DEEPX Runtime (`DXRT`) library and the NPU driver.  
 
 ```
-$ sudo apt install -y ~/Downloads/dxrt-driver-dkms_2.4.0-2_all.deb 
-$ sudo apt install -y ~/Downloads/libdxrt_3.3.2_all.deb
+$ sudo apt install -y ~/Downloads/dxrt-driver-dkms_2.6.0-2_all.deb 
+$ sudo apt install -y ~/Downloads/libdxrt-bin_3.4.2_arm64.deb
 ```
 
-<div align="left">
+<div align="left" markdown="1">
   <img src="./resources/Runtime_Library_Installation_Progress.png" width="700">
-  <p>Figure. Runtime Library (`libdxrt`) Installation Progress</p>
+  <p markdown="1">Figure. DEEPX Runtime Library (`libdxrt`) Installation Progress</p>
 </div>
 
 
@@ -66,7 +66,7 @@ Confirm that the DX-M1 module is correctly interfaced and recognized by the syst
 $ dxrt-cli -s
 ```
 
-<div align="left">
+<div align="left" markdown="1">
   <img src="./resources/Hardware_Verification.png" width="600">
   <p>Figure. Hardware Verification using `dxrt-cli -s` Command</p>
 </div>
@@ -86,7 +86,7 @@ Perform a firmware update if any of the following conditions occur.
 
 The latest firmware binaries and guides are available at the official DEEPX GitHub repository.  
 
-- **URL:** https://github.com/DEEPX-AI/dx_fw
+- URL: [https://github.com/DEEPX-AI/dx_fw](https://github.com/DEEPX-AI/dx_fw)
 
 **Quick Update Procedure**  
 
@@ -122,7 +122,7 @@ $ ./install.sh --all
 $ ./run_demo.sh 
 ```
 
-<div align="left">
+<div align="left" markdown="1">
   <img src="./resources/dx_app_Demo_Output.png" width="700">
   <p>Figure. `dx_app` Demo Output: Terminal Performance Summary (top) and Real-time Object Detection Result (bottom)</p>
 </div>
@@ -142,11 +142,11 @@ $ ./run_demo.sh
 ```
 
 <div align="left">
-  <img src="./resources/dx_stream_GStreamer_Pipeline_01.png" width="700">
+  <img src="./resources/dx_stream_GStreamer_Pipeline_01.png" width="600">
 </div>
 
-<div align="left">
-  <img src="./resources/dx_stream_GStreamer_Pipeline_02.jpg" width="500">
+<div align="left" markdown="1">
+  <img src="./resources/dx_stream_GStreamer_Pipeline_02.png" width="400">
   <p>Figure. `dx_stream` GStreamer Pipeline: Plugin menu selection (top) and multi-object detection result (bottom)</p>
 </div>
 
@@ -154,14 +154,14 @@ $ ./run_demo.sh
 
 **NPU Utilization (`dxtop`)**  
 
-The dxtop utility provides a real-time CLI (Command Line Interface) to monitor NPU utilization, temperature, and operational status.  
+The `dxtop` utility provides a real-time CLI (Command Line Interface) to monitor NPU utilization, temperature, and operational status.  
 
 ```
 $ dxtop
 ```
 
-<div align="left">
-  <img src="./resources/Real-time_NPU_Resource_Monitoring.png" width="700">
+<div align="left" markdown="1">
+  <img src="./resources/Real-time_NPU_Resource_Monitoring.png" width="600">
   <p>Figure. Real-time NPU Resource Monitoring via `dxtop`</p>
 </div>
 
@@ -218,9 +218,5 @@ $ lspci -vv | grep -i LnkSta:
 !!! note "NOTE"  
 
     To achieve the maximum AI performance of 25 TOPS, the link speed **must** be confirmed as **8GT/s**.
-
----
-
-If you run into errors during setup, see **[Appendix. Troubleshooting](./04_Appendix.md)**.
 
 ---

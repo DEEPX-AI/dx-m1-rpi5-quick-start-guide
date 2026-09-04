@@ -1,7 +1,5 @@
 # DEEPX DX-M1 Quick User Manual for Raspberry Pi 5
 
-![Banner](docs/source/img/Main-Banner.png)
-
 A quick-start guide for integrating the **DEEPX DX-M1** AI accelerator with the **Raspberry Pi 5** via PCIe M.2. It walks through the hardware, driver/runtime installation, and running your first NPU inference demo.
 
 ## DX-M1 at a Glance
@@ -11,8 +9,8 @@ A quick-start guide for integrating the **DEEPX DX-M1** AI accelerator with the 
 | AI Performance | 25 TOPS (INT8) |
 | Host Interface | PCIe Gen3 x4 |
 | Memory | 4GB LPDDR5 |
-| Form Factor | M.2 2280 (M Key) |
-| OS Support | Windows 10/11, Debian-based Linux, Yocto |
+| Form Factor | M.2 2280 (M Key), 22 x 80 x 4.72 mm |
+| OS Support | Windows 10/11, Debian-based Linux, Docker, Yocto Linux |
 
 ## Guide
 

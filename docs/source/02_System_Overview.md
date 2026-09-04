@@ -14,16 +14,16 @@ The DX-M1 is a high-efficiency AI inference accelerator designed for seamless in
 </div>
 
 
-Table. DX-M1 M.2 Technical Specification  
+Table. DX-M1 M.2 Technical Specifications  
 
 | Features | Details |
 |---|---|
 | AI Performance | 25 TOPS (INT8) |
 | Host Interface | PCIe Gen3 x4 (Supports Gen 1/2/3 & x1/x2/x4) |
-| Memory | 4GB LPDDR5 (5600 MT/s) |
-| Power Consumption | 1W (min) ~ 5W (max) |
-| Form Factor | M.2 2280 (M Key), 22 x 80mm |
-| OS Support | Windows 11/10<br>Debian-based Linux (Ubuntu 24.04/22.04/20.04 LTS)<br>Yocto Project |
+| Memory | 4GB LPDDR5 |
+| Power Consumption | 5W (Typical) |
+| Form Factor | M.2 2280 (M Key), 22 x 80 x 4.72 mm |
+| OS Support | Windows 11/10<br>Debian-based Linux (Ubuntu 24.04/22.04/20.04 LTS), Docker <br>Yocto Linux |
 | AI Frameworks | Ultralytics, PyTorch, TensorFlow, ONNX, Keras |
 | System Support | x86 and ARM-based Architectures |
 
@@ -39,11 +39,11 @@ This section outlines the physical integration of the DEEPX DX-M1 accelerator. F
 
 Complete the basic OS and power configuration by referring to the official documentation:  
 
-- Getting started with your Raspberry Pi (https://www.raspberrypi.com/documentation/computers/getting-started.html)  
+- [Getting started with your Raspberry Pi](https://www.raspberrypi.com/documentation/computers/getting-started.html)  
 
 **Step 2. Connecting the DX-M1 M.2 Module**  
 
-Once the host is prepared, install the DX-M1 M.2 NPU module via the PCIe M.2 HAT as shown below.  
+Once the host is prepared, install the **DX-M1 M.2 NPU module** via the PCIe M.2 HAT as shown below.  
  
 <div align="left">
   <img src="./resources/DX-M1_M.2_Raspberry5Pi.png" width="400">
