@@ -1,11 +1,19 @@
 
 ## Release Note
 
-## v1.3.0 / 2026.08.26
+## v1.3.0 / 2026.11.06
 
 ### Changed
 
 - Reformatted the Quick User Manual into Markdown style
+- Update DX-M1 Driver and Runtime Installation guide for SDK 2.5.0 release
+- Update `dx_app` installation to use a Python virtual environment
+- Replace all screen captures
+
+### Added
+
+- Add Raspberry Pi Camera Module 3 (Wide) connection and camera verification steps
+- Add camera input demos for `dx_app` and `dx_stream`
 
 ---
 

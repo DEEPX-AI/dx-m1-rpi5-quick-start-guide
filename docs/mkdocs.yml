@@ -1,4 +1,4 @@
-site_name: DEEPX DX-M1 Quick User Manual for Raspberry Pi 5
+site_name: DEEPX DX-M1 & DX-M1M Quick User Manual for Raspberry Pi 5
 use_directory_urls: false
 docs_dir: source # markdown 원문 폴더
 site_dir: docs # html로 변환된 폴더
@@ -46,11 +46,11 @@ plugins:
   - to-pdf:
       author: DEEPX.ai
       copyright: ⓒ Copyright 2026 DEEPX All Rights Reserved.
-      cover_title: DEEPX DX-M1 Quick User Manual for Raspberry Pi 5
-      cover_subtitle: 2026/08/26 (v1.3.0)
+      cover_title: DEEPX DX-M1 & DX-M1M Quick User Manual for Raspberry Pi 5
+      cover_subtitle: 2026/11/06 (v1.3.0)
       cover_logo : img/deepx.png
       custom_template_path: source/stylesheets
-      output_path: ../DEEPX_DX-M1_Quick_UM_Raspberry_Pi_5_v1.3.0_AUG_2026.pdf
+      output_path: ../DEEPX_DX-M1_M1M_Quick_UM_Raspberry_Pi_5_v1.3.0_NOV_2026.pdf
 
 extra:
   homepage: https://developer.deepx.ai

@@ -41,12 +41,15 @@ a {
     }
 
     /* 2. Nested 구조 챕터 블록 렌더링 중단 방지 */
-    article, section, .md-content, .md-grid, .md-main__inner, .md-content__inner {
+    /* Material의 html{height:100%}, body/.md-container flex 레이아웃 때문에 WeasyPrint가 페이지 나눔 뒤 내용을 버림 */
+    html, body, .md-container, .md-main, article, section,
+    .md-content, .md-grid, .md-main__inner, .md-content__inner {
         page-break-inside: auto !important;
         break-inside: auto !important;
-        display: block !important;          
+        display: block !important;
         overflow: visible !important;
         height: auto !important;
+        min-height: 0 !important;
         max-height: none !important;
     }
 
