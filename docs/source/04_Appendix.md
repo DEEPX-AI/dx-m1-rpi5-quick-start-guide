@@ -15,6 +15,6 @@ When executing the AI demo application, the program terminates with a red `[dxrt
 
 **Solution**  
 
-- To resolve this, you must perform a manual firmware upgrade to ensure the hardware can communicate correctly with the latest SDK features. Refer to **Section. Optional: Firmware Update**.  
+- To resolve this, you must perform a manual firmware upgrade to ensure the hardware can communicate correctly with the latest SDK features. Refer to **Getting Started > [Optional] Firmware Update**.  
 
 ---

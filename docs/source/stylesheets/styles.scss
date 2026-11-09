@@ -62,9 +62,12 @@ article#doc-cover {
 /* 일반 본문 요소 스타일                                 */
 /* ==================================================== */
 article {
-  h1 { border-bottom: 2px solid #06b; page-break-after: avoid; }
-  h2 { border-bottom: 1px solid #5ad; page-break-after: avoid; }
-  h3 { border-bottom: 0.5px solid #eee; page-break-after: avoid; }
+  h1 { border-bottom: 2px solid #06b; }
+  h2 { border-bottom: 1px solid #5ad; }
+  h3 { border-bottom: 0.5px solid #eee; }
+
+  /* WeasyPrint 62 drops all remaining content when heading break-avoid chains leave no break point */
+  h1, h2, h3, h4, h5, h6 { page-break-after: auto !important; }
 
   h1 > .pdf-order,
   h2 > .pdf-order,
@@ -191,39 +194,4 @@ article#doc-back_cover {
       font-size: 10.5pt !important; /* 본문(11pt)과 비슷하거나 꽉 차지 않게 살짝만 작게 */
     }
   }
-}
-
-/* ==================================================== */
-/* Admonition 색상 강제 지정                              */
-/* WeasyPrint가 Material 테마의 색상용 CSS 변수를          */
-/* 제대로 해석하지 못해 caution/warning이 note(파란색)로   */
-/* 보이는 문제를 막기 위해 직접 색상을 지정한다.            */
-/* ==================================================== */
-.admonition.note,
-.admonition.warning,
-.admonition.caution,
-.admonition.attention {
-  border-color: #448aff !important;
-}
-.admonition.note > .admonition-title {
-  background-color: rgba(68, 138, 255, 0.1) !important;
-}
-.admonition.note > .admonition-title::before {
-  background-color: #448aff !important;
-}
-
-.admonition.warning,
-.admonition.caution,
-.admonition.attention {
-  border-color: #ff9100 !important;
-}
-.admonition.warning > .admonition-title,
-.admonition.caution > .admonition-title,
-.admonition.attention > .admonition-title {
-  background-color: rgba(255, 145, 0, 0.1) !important;
-}
-.admonition.warning > .admonition-title::before,
-.admonition.caution > .admonition-title::before,
-.admonition.attention > .admonition-title::before {
-  background-color: #ff9100 !important;
 }
