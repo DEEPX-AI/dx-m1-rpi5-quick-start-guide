@@ -31,6 +31,6 @@ See [RELEASE_NOTES.md](./RELEASE_NOTES.md) for the version history of this manua
 ## Support
 
 - **Developer Portal**: [https://developer.deepx.ai](https://developer.deepx.ai)
-- **Technical Support**: [tech_support@deepx.ai](mailto:tech_support@deepx.ai)
+- **Technical Support**: [https://community.deepx.ai](https://community.deepx.ai)
 
 Copyright © DEEPX. All rights reserved.
