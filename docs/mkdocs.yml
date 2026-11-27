@@ -36,6 +36,7 @@ theme:
 site_url: 'https://developer.deepx.ai/'
 nav:
   - Introduction: 01_Introduction.md
+  - Before You Start: 00_Before_You_Start.md
   - System Overview: 02_System_Overview.md
   - Getting Started: 03_Getting_Started.md
   - Appendix. Troubleshooting: 04_Appendix.md
@@ -44,13 +45,15 @@ plugins:
   - search
   - include-markdown
   - to-pdf:
+      # Enabled by ./mkdocs.sh (ENABLE_PDF_EXPORT=1); off for `mkdocs serve` and CI.
+      enabled_if_env: ENABLE_PDF_EXPORT
       author: DEEPX.ai
       copyright: ⓒ Copyright 2026 DEEPX All Rights Reserved.
       cover_title: DEEPX DX-M1 & DX-M1M Quick User Manual for Raspberry Pi 5
-      cover_subtitle: 2026/11/06 (v1.3.0)
+      cover_subtitle: !ENV [DX_PDF_COVER_SUBTITLE, 'development build']
       cover_logo : img/deepx.png
       custom_template_path: source/stylesheets
-      output_path: ../DEEPX_DX-M1_M1M_Quick_UM_Raspberry_Pi_5_v1.3.0_NOV_2026.pdf
+      output_path: !ENV [DX_PDF_OUTPUT_PATH, '../DEEPX_DX-M1_M1M_Quick_UM_Raspberry_Pi_5_dev.pdf']
 
 extra:
   homepage: https://developer.deepx.ai
@@ -62,6 +65,8 @@ extra_css:
   - stylesheets/extra.css
 markdown_extensions:
   - admonition
+  # GitHub alerts (> [!NOTE]) render as admonitions on the site and in the PDF.
+  - github-callouts
   - def_list
   - toc:
         permalink: "true"
@@ -76,7 +81,8 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight:
-      anchor_linenums: true
+      # Line anchors have no destination in the PDF and fail the --strict build.
+      anchor_linenums: false
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences

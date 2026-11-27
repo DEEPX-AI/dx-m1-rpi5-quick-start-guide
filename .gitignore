@@ -1,0 +1,9 @@
+# MkDocs build output (docs/mkdocs.sh)
+docs/docs/
+docs/*.pdf
+
+# dx-env-report.sh output
+dx-env-report-*.txt
+
+# Python virtual environment
+.venv/
