@@ -1,0 +1,7 @@
+# Issues are not used for this repository. The "New issue" page only shows
+# a link to the DEEPX Developer Community, where all questions are handled.
+blank_issues_enabled: false
+contact_links:
+  - name: DEEPX Developer Community
+    url: https://community.deepx.ai/c/support/5
+    about: Ask technical questions and report problems with this guide here.

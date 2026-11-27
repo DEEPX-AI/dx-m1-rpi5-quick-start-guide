@@ -1,0 +1,35 @@
+name: docs
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: docs/requirements.txt
+
+      - name: Install MkDocs
+        run: pip install -r docs/requirements.txt
+
+      # Versions in README/docs must match versions.yml; commands must be copy-paste safe.
+      - name: Check docs against versions.yml
+        run: python3 scripts/check_docs.py
+
+      # HTML only; the PDF is built locally with docs/mkdocs.sh.
+      - name: Build site (strict)
+        working-directory: docs
+        run: mkdocs build --strict
+
+      - name: Check shell scripts
+        run: |
+          bash -n scripts/dx-env-report.sh
+          bash -n docs/mkdocs.sh

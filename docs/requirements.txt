@@ -1,0 +1,9 @@
+# MkDocs and the plugins/extensions referenced by mkdocs.yml.
+# Install: pip install -r docs/requirements.txt
+mkdocs>=1.6,<2
+mkdocs-material>=9.5,<10
+mkdocs-include-markdown-plugin>=7,<8
+pymdown-extensions>=10
+markdown-callouts>=0.4,<1
+mkdocs-to-pdf>=0.10,<1
+pyyaml>=6

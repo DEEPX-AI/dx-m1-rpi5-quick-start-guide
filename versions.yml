@@ -1,0 +1,41 @@
+# Single source of truth for the SDK versions this guide targets.
+#
+# Every version string that appears in README.md and docs/source/*.md must
+# match this file. scripts/check_docs.py enforces it in CI, so update this
+# file first, then the docs, when moving to a new DX-All-Suite release.
+
+guide:
+  version: 1.3.1
+  date: 2026-11-27
+
+# DX-All-Suite release the guide is written against.
+# https://github.com/DEEPX-AI/dx-all-suite/blob/main/RELEASE_NOTES.md
+dx_all_suite: 2.5.0
+
+components:
+  dx_rt: 3.5.0                # libdxrt-bin_<ver>_arm64.deb
+  npu_driver: 2.7.0           # dxrt-driver-dkms_<ver>-<rev>_all.deb
+  npu_driver_deb_revision: 2
+  dx_fw: 2.7.6                # firmware bundled with the DX-All-Suite release
+  dx_app: 3.3.0               # git tag v<ver>
+  dx_stream: 3.2.0            # git tag v<ver>
+
+# Minimum versions required by DX-RT (DX-RT 3.5.0 release notes).
+minimum:
+  npu_driver: 2.7.0
+  dx_fw: 2.7.6
+
+platform:
+  board: Raspberry Pi 5
+  os: Raspberry Pi OS (64-bit), Debian 13 "trixie"
+
+# Hands-on validation record on real hardware.
+# status: not-recorded | validated
+# Set to "validated" only after a clean-OS run per docs/validation/PROTOCOL.md,
+# with the log committed under docs/validation/v<dx_all_suite>/.
+validation:
+  status: not-recorded
+  date: null
+  kernel: null
+  hat: null
+  log: null
